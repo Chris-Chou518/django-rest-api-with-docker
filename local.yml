@@ -1,4 +1,4 @@
-version: "3.9"
+# version: "3.9"
 
 services:
     api:
@@ -43,7 +43,7 @@ services:
 
 networks:
     authors-api:
-        driver:bridge
+        driver: bridge
 
 volumes:
     static_volume:

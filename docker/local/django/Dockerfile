@@ -1,4 +1,4 @@
-ARG PYTHON_VERSION=3.10.12-bullseye
+ARG PYTHON_VERSION=3.11.2-bullseye
 
 FROM python:${PYTHON_VERSION} as python
 
@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 		
 COPY ./requirements .
 
-RUN pip wheel --wheel-dir /user/src/app/wheels \
+RUN pip wheel --wheel-dir /usr/src/app/wheels \
 		-r ${BUILD_ENVIRONMENT}.txt
 				
 
@@ -32,8 +32,7 @@ WORKDIR ${APP_HOME}
 RUN apt-get update && apt-get install --no-install-recommends -y \
 		libpq-dev \
 		gettext \
-		&& apt-get purge -y --auto-remove -o
-		APT::AutoRemove::RecommendsImportant=false \
+		&& apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
 		&& rm -rf /var/lib/apt/lists/*
 		
 COPY --from=python-build-stage /usr/src/app/wheels /wheels/
