@@ -140,6 +140,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CORS_URLS_REGEX = r"^api/.*$" #這個設置表示允許所有以 /api/ 開頭的 URL 進行跨域請求。
 
+AUTH_USER_MODEL= "users.User"
+
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
