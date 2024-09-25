@@ -16,7 +16,9 @@ class ArticleJSONRenderer(JSONRenderer):
             errors = data.get("errors", None)
         else:
             errors = None
-            return json.dumps({"status_code": status_code, "articles": []})  # 回傳空列表而不是 None
+            return json.dumps(
+                {"status_code": status_code, "articles": []}
+            )  # 回傳空列表而不是 None
 
         if errors is not None:
             return super(ArticleJSONRenderer, self).render(data)

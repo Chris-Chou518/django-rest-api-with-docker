@@ -1,4 +1,4 @@
-from .base import * # noqa 
+from .base import *  # noqa
 from .base import env
 
 ADMIN = [("Chris", "ttlyes496@gmail.com")]

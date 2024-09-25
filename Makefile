@@ -47,8 +47,8 @@ black:
 	docker compose -f local.yml exec api black --exclude=migrations .
 
 isort-check:
-	docker compose -f local.yml exec api isort . --check-only --skip venv --skip migrations
-
+	
+docker compose -f local.yml exec api isort . --check-only --skip venv --skip migrations
 isort-diff:
 	docker compose -f local.yml exec api isort . --diff --skip venv --skip migrations
 
