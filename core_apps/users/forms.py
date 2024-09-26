@@ -8,7 +8,7 @@ User = get_user_model()
 class UserChangeForm(admin_forms.UserChangeForm):
     class Meta(admin_forms.UserChangeForm.Meta):
         model = User
-
+        # fields = "__all__"  # 確保所有必要欄位被包含
 
 class UserCreationForm(admin_forms.UserCreationForm):
     class Meta(admin_forms.UserCreationForm.Meta):
