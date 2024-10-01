@@ -29,7 +29,7 @@ services:
             - es
         command: /start
         networks:
-           - authors-api       
+            - authors-api       
 
     postgres:
         build:
